@@ -221,11 +221,13 @@ class OrderSerializer(serializers.ModelSerializer):
             'sub_total',
             'discount',
             'total_price',
+            'mnt',
+            'mnt_price',
             'order_items',
             'order_payments',
             'sales_staff_code',
             'remark'
-        ] 
+        ]
 
 class PatientSerializer(serializers.ModelSerializer):
     class Meta:

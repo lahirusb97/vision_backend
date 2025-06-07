@@ -45,6 +45,8 @@ class OrderService:
             order.total_price = order_data.get('total_price', order.total_price)
             order.status = order_data.get('status', order.status)
             order.sales_staff_code_id = order_data.get('sales_staff_code', order.sales_staff_code_id)
+            order.mnt = order_data.get('mnt', order.mnt)
+            order.mnt_price = order_data.get('mnt_price', order.mnt_price)
             order.remark = order_data.get('remark', order.remark)
             order.save()  # ✅ Save updated order
 
