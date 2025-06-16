@@ -46,7 +46,8 @@ from .views import (
     InvoiceDetailView,
     OrderUpdateView,
     RefractionDetailRetrieveUpdateDeleteView,
-    LensSearchAPIView
+    LensSearchAPIView,
+    ExternalLensArrivalStatusBulkCreateView
 
 )
 # from .views import CustomAuthToken
@@ -102,6 +103,7 @@ urlpatterns = [
     path('lens-types/<int:pk>/', LensTypeRetrieveUpdateDeleteView.as_view(), name='lens-type-detail'),
     path('lens-coatings/', LensCoatingListCreateView.as_view(), name='lens-coating-list-create'),
     path('lens-coatings/<int:pk>/', LensCoatingRetrieveUpdateDeleteView.as_view(), name='lens-coating-detail'),
+    path('external-order/arrival-status/bulk', ExternalLensArrivalStatusBulkCreateView.as_view(), name='external-order-arrival-status-bulk'),
 
     ]
     # path('api-token-auth/', CustomAuthToken.as_view(), name='api-token-auth'),
