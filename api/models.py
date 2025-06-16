@@ -402,3 +402,12 @@ class ChannelPayment(models.Model):
     def __str__(self):
         return f"Payment for {self.appointment.id} - {self.amount} ({self.payment_method})"
 
+
+class ExternalLensArrivalStatus(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="external_arrival_statuses")
+    external_lens_id = models.IntegerField()
+    arrival_status = models.CharField(max_length=20, default="received")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Order {self.order.id} - Lens {self.external_lens_id} - {self.arrival_status}"

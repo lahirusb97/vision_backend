@@ -25,7 +25,8 @@ from .models import (
     Appointment,
     ChannelPayment,
     CustomUser,
-    Invoice
+    Invoice,
+    ExternalLensArrivalStatus
 )
 
 class BranchSerializer(serializers.ModelSerializer):
@@ -365,3 +366,9 @@ class AppointmentDetailSerializer(serializers.ModelSerializer):
         return ChannelPaymentSerializer(payments, many=True).data 
 
 
+
+class ExternalLensArrivalStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ExternalLensArrivalStatus
+        fields = ["id", "order", "external_lens_id", "arrival_status", "created_at"]
+        read_only_fields = ["created_at"]
